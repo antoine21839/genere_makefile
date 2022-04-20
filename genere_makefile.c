@@ -30,7 +30,7 @@ int ecrire_objs(FILE *out){
 
     assert(NULL != out);
 
-    fprintf(out, "OBJ =");
+    fprintf(out, "OBJS =");
     fp = popen("ls *.c", "r");
     if(NULL == fp){
         fprintf(stderr, "Erreur lors de l'ouverture du pipe !\n");
