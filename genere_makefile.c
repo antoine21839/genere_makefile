@@ -134,7 +134,7 @@ int ecrire_debut(FILE *out, const char *nom_out){
 }
 
 /* Ecrit la ligne de compilation finale. */
-int ecrire_all(FILE * out){
+int ecrire_all(FILE *out){
     assert(NULL != out);
 
     fprintf(out,"all : $(OBJS)\n");
@@ -197,6 +197,7 @@ int main(int argc, const char **argv){
     }
     system("rm genere_makefile.c");
     ret = ecrire_debut(out, argv[1]);
+    ecrire_all(out);
     ret = ret && ecrire_commandes(out);
     ecrire_clean(out);
     fclose(out);
