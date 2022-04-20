@@ -13,7 +13,7 @@
 #include <assert.h>
 #define TAILLE_MAX 100
 #define CC "gcc"
-#define CFLAGS "-c -Wall -ansi -Werror -Wfatal-errors -O2"
+#define CFLAGS "-Wall -ansi -Werror -Wfatal-errors -O2"
 
 /* Affecte le caractère "extension" à la place du dernier caractère de la chaine pointée par "nom_fichier". */
 void changer_extension(char *nom_fichier, char extension){
@@ -152,7 +152,7 @@ void ecrire_ligne_commande(FILE * out, char *nom_fichier){
     fprintf(out, "%s: ", nom_fichier);
     changer_extension(nom_fichier, 'c');
     fprintf(out, "%s\n", nom_fichier);
-    fprintf(out, "\t$(CC) $(CFLAGS) %s\n", nom_fichier);
+    fprintf(out, "\t$(CC) -c $(CFLAGS) %s\n", nom_fichier);
     fprintf(out, "\n");
 }
 
