@@ -151,7 +151,12 @@ void ecrire_ligne_commande(FILE * out, char *nom_fichier){
     changer_extension(nom_fichier, 'o');
     fprintf(out, "%s: ", nom_fichier);
     changer_extension(nom_fichier, 'c');
-    fprintf(out, "%s\n", nom_fichier);
+    fprintf(out, "%s ", nom_fichier);
+    changer_extension(nom_fichier, 'h');
+    if(access(nom_fichier, 0) == 0)
+        fprintf(out, "%s", nom_fichier);
+    fprintf(out, "\n");
+    changer_extension(nom_fichier, 'c');
     fprintf(out, "\t$(CC) -c $(CFLAGS) %s\n", nom_fichier);
     fprintf(out, "\n");
 }
