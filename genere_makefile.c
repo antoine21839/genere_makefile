@@ -13,7 +13,7 @@
 #include <assert.h>
 #define TAILLE_MAX 100
 #define CC "gcc"
-#define CFLAGS "-Wall -ansi -Werror -Wfatal-errors -O2"
+#define CFLAGS "-c -Wall -ansi -Werror -Wfatal-errors -O2"
 
 /* Affecte le caractère "extension" à la place du dernier caractère de la chaine pointée par "nom_fichier". */
 void changer_extension(char *nom_fichier, char extension){
