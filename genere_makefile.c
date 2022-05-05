@@ -193,12 +193,12 @@ int main(int argc, const char **argv){
 
     if(2 != argc){
         fprintf(stderr, "Syntaxe incorrecte ! RTFM !!\n");
-        exit(EXIT_FAILURE);
+        return 1;
     }
     out = fopen("makefile", "w");
     if(NULL == out){
         fprintf(stderr, "Erreur lors de la création du fichier de sortie !\n");
-        exit(EXIT_FAILURE);
+        return 1;
     }
     system("rm genere_makefile.c");
     ret = ecrire_debut(out, argv[1]);
