@@ -11,7 +11,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <assert.h>
-#define TAILLE_MAX 100
+#define TAILLE_MAX 256
 #define CC "gcc"
 #define CFLAGS "-Wall -ansi -Werror -Wfatal-errors -O2"
 
@@ -144,7 +144,7 @@ int ecrire_all(FILE *out){
 }
 
 /* Ecrit la commande de compilation pour le fichier dont le nom est pointé par "nom_fichier" */
-void ecrire_ligne_commande(FILE * out, char *nom_fichier){
+void ecrire_ligne_commande(FILE *out, char *nom_fichier){
     assert(NULL != out);
     assert(NULL != nom_fichier);
 
