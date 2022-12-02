@@ -85,7 +85,7 @@ int ecrire_ldflags_h(FILE *out, const char *nom_fichier_h){
             fprintf(out, "-lm ");
         else if(strcmp(mot_lu, "<ncurses.h>") == 0)
             fprintf(out, "-lncurses ");
-        else if(strcmp(mot_lu, "\"MLV/all.h\"") == 0)
+        else if(strcmp(mot_lu, "<MLV/all.h>") == 0)
             fprintf(out, "-lMLV ");
         else if(strcmp(mot_lu, "<readline\\readline.h>") == 0)
             fprintf(out, "-lreadline ");
